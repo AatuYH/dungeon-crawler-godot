@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://StaminaPotion.gd" type="Script" id=1]
+[ext_resource path="res://Assets/GFX/frames/flask_big_green.png" type="Texture" id=2]
+[ext_resource path="res://Objects/PotionTemplate.tscn" type="PackedScene" id=3]
+
+
+[node name="StaminaPotion" instance=ExtResource( 3 )]
+script = ExtResource( 1 )
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 2 )
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
